@@ -5,20 +5,24 @@ $( function() {
         buttonImage: "img/calendar-icon.png",
         buttonImageOnly: true,
         buttonText: "Select date",
-        dateFormat: "mm/dd/yy"
-
+        language: "it",
+        autoclose: true,
+        todayHighlight: true,
+        dateFormat: "dd/mm/yy"
     });
 } );
 
 // Lay ngay mac dinh
-$( document ).ready(function() {
-    var d = new Date();
+$(document).ready(function () {
+    var date = new Date();
 
-    var month = d.getMonth()+1;
-    var day = d.getDate();
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
 
-    var output = ((''+month).length<2 ? '0' : '') + month  + '/' +
-    ((''+day).length<2 ? '0' : '') + day + '/' +
-    d.getFullYear();
-    $('#datepicker').val(output);   
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    var today = day + "/" + month + "/" + year;
+    $("#datepicker").attr("value", today);
 });

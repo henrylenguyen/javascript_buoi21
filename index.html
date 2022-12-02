@@ -30,7 +30,7 @@
 
 	<div class="wrapper">
 		<!-- Sidebar Holder -->
-		<nav id="sidebar">
+		<nav id="sidebar" class="active">
 			<div class="sidebar-header">
 				<h3>Bootstrap Sidebar</h3>
 				<strong>BS</strong>
@@ -114,7 +114,7 @@
 							</div>
 							<div class="col-md-6 text-right">
 								<button class="btn btn-primary" id="btnThem" data-toggle="modal"
-									data-target="#myModal" onclick="createStaff();">Thêm nhân viên</button>
+									data-target="#myModal" onclick="createClick();">Thêm nhân viên</button>
 							</div>
 						</div>
 					</div>
@@ -124,9 +124,9 @@
 						<div class="row mb-3">
 							<div class="col">
 								<div class="input-group">
-									<input type="text" class="form-control" placeholder="Loại nhân viên" id="searchName">
+									<input type="text" class="form-control" placeholder="Tìm nhân viên theo xếp loại hoặc theo tên hoặc email" id="searchName">
 									<div class="input-group-prepend">
-										<span class="input-group-text" id="btnTimNV"><i class="fa fa-search"></i></span>
+										<span class="input-group-text" id="btnTimNV" onclick="searchStaff();"><i class="fa fa-search"></i></span>
 									</div>
 								</div>
 							</div>
@@ -146,9 +146,7 @@
 									<th>Tổng lương</th>
 									<th>Xếp loại</th>
 									<th>
-										<i class="fa-solid fa-trash btnDelete" onclick="deleteStaff();"></i>
-										<i class="fa-solid fa-pen-to-square btnUpdate" data-toggle="modal"
-									data-target="#myModal" onclick="updateStaff();"></i>
+										<i class="fa-solid fa-gear"></i>
 									</th>
 								</tr>
 							</thead>
@@ -210,7 +208,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fa fa-address-book"></i></span>
 								</div>
-								<input type="name" name="name" id="name" class="form-control input-sm"
+								<input  type="name" name="name" id="name" class="form-control input-sm"
 									placeholder="Họ và tên">
 							</div>
 							<span class="sp-thongbao" id="tbTen"></span>
@@ -235,6 +233,9 @@
 								</div>
 								<input type="password" name="password" id="password" class="form-control input-sm"
 									placeholder="Mật khẩu">
+								<div class="showHide">
+									<img src="./img/show.png" alt="show">
+								</div>
 							</div>
 							<span class="sp-thongbao" id="tbMatKhau"></span>
 						</div>
@@ -292,8 +293,9 @@
 
 				<!-- Modal footer -->
 				<div class="modal-footer" id="modal-footer">
-					<button id="btnThemNV" type="button" class="btn btn-success">Thêm người dùng</button>
-					<button id="btnDong" type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+					<button id="btnThemNV" type="button" class="btn btn-success" onclick="createStaff();">Thêm nhân viên</button>
+					<button id="btnCapNhatNV" type="button" class="btn btn-success" onclick="updateStaff();">Cập nhật</button>
+					<button id="btnDong" type="button" class="btn btn-danger" data-dismiss="modal" onclick="resetFrm();">Đóng</button>
 				</div>
 
 			</div>

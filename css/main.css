@@ -28,15 +28,27 @@
   color: red;
   cursor: pointer;
   font-size: 20px;
-  padding-right: 10px;
 }
 
 .btnUpdate {
   color: green;
   cursor: pointer;
   font-size: 20px;
-  padding-left: 10px;
 }
 button.swal2-confirm.btn.btn-success {
   margin-left: 1rem;
+}
+.showHide {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+}
+
+input#password {
+  padding-right: 40px;
+}
+td {
+  font-size: 15px;
 }

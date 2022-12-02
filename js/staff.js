@@ -8,24 +8,24 @@ function staffList(user, fullName, email, passWord, date, basicSalary, position,
   this.position = position;
   this.workTime = workTime;
   this.sumSalary = function(position){
-    if(position.includes("Sếp")){
+    if(this.position.includes("Sếp")){
       return this.basicSalary * 3;
     }
-    else if(position.includes("Trưởng phòng")){
+    else if (this.position.includes("Trưởng phòng")) {
       return this.basicSalary * 2;
     }
-    else if(position.includes("Nhân viên")){
+    else if (this.position.includes("Nhân viên")) {
       return this.basicSalary;
     }
   }
   this.classification = function(workTime){
-    if(workTime >=192){
+    if (this.workTime >= 192) {
       return "Xuất sắc";
     }
-    else if(workTime >=176){
+    else if (this.workTime >= 176) {
       return "Giỏi";
     }
-    else if(workTime >=160){
+    else if (this.workTime >= 160) {
       return "Khá"
     }
     else{
