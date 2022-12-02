@@ -589,7 +589,7 @@ function deleteStaff(user) {
 // }
 
 
-// Tìm kiếm nhân viên theo Enter
+// Tìm kiếm nhân viên theo Enter và mỗi lần user nhập bàn phím
 
 search.addEventListener("keypress", (event) => {
  
